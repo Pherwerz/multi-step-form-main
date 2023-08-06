@@ -1,5 +1,5 @@
 .step {
-  @apply flex-1 bg-sidebar-mobile md:bg-sidebar-desktop h-[172px] md:h-[unset] bg-no-repeat bg-cover justify-center gap-[20px] pt-[30px] md:flex-col md:rounded-[10px] md:pl-[30px] md:pt-[40px];
+  @apply basis-[274px] shrink-0 bg-sidebar-mobile md:bg-sidebar-desktop h-[172px] md:h-[unset] bg-no-repeat bg-cover justify-center md:justify-start gap-[20px] pt-[30px] md:flex-col md:rounded-[10px] md:pl-[30px] md:pt-[40px];
 
   &-box {
     @apply flex gap-[20px] md:items-center;

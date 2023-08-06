@@ -17,10 +17,10 @@ const Home: NextPage = () => {
 
   return (
     <main className="main">
-      <Steps className="md:hidden flex" step={step} />
+      <Steps className="md:hidden flex" step={step > 4 ? 4 : step} />
 
       <section className="main-box">
-        <Steps className="hidden md:flex" step={step} />
+        <Steps className="hidden md:flex" step={step > 4 ? 4 : step} />
 
         <div className="main-box-right">
           <div className="basis-[500px]">
