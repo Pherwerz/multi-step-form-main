@@ -28,3 +28,11 @@ body {
     @apply text-center text-[#3e52a3];
   }
 }
+
+.h2 {
+  @apply mb-[10px] font-bold text-[30px] text-primary-Marine-blue;
+}
+
+.p {
+  @apply text-neutral-Cool-gray;
+}

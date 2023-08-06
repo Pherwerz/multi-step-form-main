@@ -13,9 +13,9 @@ const Appreciation: FC = () => {
           src="/assets/images/icon-thank-you.svg"
         />
 
-        <h2>Thank you!</h2>
+        <h2 className="h2">Thank you!</h2>
 
-        <p>
+        <p className="p">
           Thanks for confirming your subscription! We hope you have fun using
           our platform. If you ever need support, please feel free to email us
           at support@loremgaming.com.
