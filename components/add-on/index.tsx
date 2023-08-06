@@ -16,7 +16,11 @@ import './index.scss';
 // Custom theme on your profile
 // +$2/mo
 
-const AddOn: FC = () => {
+type Props = {
+  duration: string;
+};
+
+const AddOn: FC<Props> = ({ duration }) => {
   return <div className="add"></div>;
 };
 

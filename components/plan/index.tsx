@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { Dispatch, FC, SetStateAction } from 'react';
 import './index.scss';
 
 // Select your plan
@@ -16,7 +16,12 @@ import './index.scss';
 // Monthly
 // Yearly
 
-const Plan: FC = () => {
+type Props = {
+  duration: string;
+  setDuration: Dispatch<SetStateAction<string>>;
+};
+
+const Plan: FC<Props> = ({ duration, setDuration }) => {
   return <div className="plan"></div>;
 };
 

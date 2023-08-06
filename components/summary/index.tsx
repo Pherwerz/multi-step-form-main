@@ -8,7 +8,11 @@ import './index.scss';
 
 // Total (per month/year)
 
-const Summary: FC = () => {
+type Props = {
+  duration: string;
+};
+
+const Summary: FC<Props> = ({ duration }) => {
   return <div className="summary"></div>;
 };
 

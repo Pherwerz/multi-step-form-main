@@ -11,15 +11,9 @@ import Plan from '@/components/plan';
 import AddOn from '@/components/add-on';
 import Summary from '@/components/summary';
 
-const stages = [
-  <Info key={1} />,
-  <Plan key={2} />,
-  <AddOn key={3} />,
-  <Summary key={4} />,
-];
-
 const Home: NextPage = () => {
   const [step, setSteps] = useState(1);
+  const [duration, setDuration] = useState('');
 
   return (
     <main className="main">
@@ -32,7 +26,14 @@ const Home: NextPage = () => {
           <div className="basis-[500px]">
             {step < 5 ? (
               <>
-                <div className="mb-[80px]">{stages[step - 1]}</div>
+                <div className="mb-[80px]">
+                  {step === 1 && <Info />}
+                  {step === 2 && (
+                    <Plan duration={duration} setDuration={setDuration} />
+                  )}
+                  {step === 3 && <AddOn duration={duration} />}
+                  {step === 4 && <Summary duration={duration} />}
+                </div>
 
                 <Navigation
                   step={step}
