@@ -7,7 +7,16 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {},
+      fontFamily: {
+        primary: ['Ubuntu'],
+      },
+      backgroundImage: {
+        'sidebar-mobile': 'url(/assets/images/bg-sidebar-mobile.svg)',
+        'sidebar-desktop': 'url(/assets/images/bg-sidebar-desktop.svg)',
+      },
+      boxShadow: {
+        box: '0px 2px 4px 2px rgba(0, 0, 0, 0.15)',
+      },
       colors: {
         primary: {
           'Marine-blue': 'hsl(213, 96%, 18%)',

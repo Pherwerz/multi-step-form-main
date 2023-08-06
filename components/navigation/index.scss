@@ -1,0 +1,11 @@
+.nav {
+  @apply fixed md:relative w-full md:w-[unset] bottom-0 left-0 flex items-center justify-between p-[20px] md:p-0 bg-white;
+
+  &-back {
+    @apply font-medium text-neutral-Cool-gray;
+  }
+
+  &-next {
+    @apply font-medium bg-primary-Marine-blue text-white py-[10px] px-[15px] rounded-[5px] hover:opacity-75;
+  }
+}
