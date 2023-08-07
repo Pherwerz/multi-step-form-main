@@ -2,7 +2,7 @@
   @apply md:flex md:items-center md:justify-center md:h-[100vh] md:px-[20px];
 
   &-box {
-    @apply p-[15px] rounded-[10px] bg-white w-[90%] mx-auto shadow-box mt-[-70px] md:flex basis-[1000px];
+    @apply p-[20px] rounded-[10px] md:rounded-[20px] bg-white w-[90%] mx-auto shadow-box mt-[-70px] md:flex basis-[1000px];
 
     &-right {
       @apply flex-[3] flex justify-center md:pl-[15px];

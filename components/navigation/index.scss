@@ -2,7 +2,7 @@
   @apply fixed md:relative w-full md:w-[unset] bottom-0 left-0 flex items-center justify-between p-[20px] md:p-0 bg-white;
 
   &-back {
-    @apply font-medium text-neutral-Cool-gray;
+    @apply font-medium text-neutral-Cool-gray hover:text-primary-Marine-blue;
   }
 
   &-next {

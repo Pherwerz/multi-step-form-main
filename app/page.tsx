@@ -7,13 +7,15 @@ import { useState } from 'react';
 import Navigation from '@/components/navigation';
 import Info from '@/components/info';
 import Appreciation from '@/components/appreciation';
-import Plan from '@/components/plan';
-import AddOn from '@/components/add-on';
+import Plan, { Plan as PLAN } from '@/components/plan';
+import AddOn, { Addon } from '@/components/add-on';
 import Summary from '@/components/summary';
 
 const Home: NextPage = () => {
   const [step, setSteps] = useState(1);
-  const [duration, setDuration] = useState('');
+  const [duration, setDuration] = useState('Monthly');
+  const [plan, setPlan] = useState<PLAN>();
+  const [addon, setAddon] = useState<Addon>();
 
   return (
     <main className="main">
@@ -25,14 +27,32 @@ const Home: NextPage = () => {
         <div className="main-box-right">
           <div className="basis-[500px]">
             {step < 5 ? (
-              <>
-                <div className="mb-[80px]">
+              <div className="flex flex-col md:h-[575px]">
+                <div className="my-[30px] md:mb-auto md:mt-[40px]">
                   {step === 1 && <Info />}
                   {step === 2 && (
-                    <Plan duration={duration} setDuration={setDuration} />
+                    <Plan
+                      duration={duration}
+                      setDuration={setDuration}
+                      plan={plan}
+                      setPlan={setPlan}
+                    />
                   )}
-                  {step === 3 && <AddOn duration={duration} />}
-                  {step === 4 && <Summary duration={duration} />}
+                  {step === 3 && (
+                    <AddOn
+                      duration={duration}
+                      addon={addon}
+                      setAddon={setAddon}
+                    />
+                  )}
+                  {step === 4 && (
+                    <Summary
+                      duration={duration}
+                      plan={plan}
+                      addon={addon}
+                      change={() => setSteps(1)}
+                    />
+                  )}
                 </div>
 
                 <Navigation
@@ -40,7 +60,7 @@ const Home: NextPage = () => {
                   next={() => setSteps(step + 1)}
                   back={() => setSteps(step - 1)}
                 />
-              </>
+              </div>
             ) : (
               <Appreciation />
             )}
