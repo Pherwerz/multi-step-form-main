@@ -1,2 +1,45 @@
 .summary {
+  &-box {
+    @apply mt-[40px] mb-[20px] p-[20px] rounded-[10px] bg-neutral-Magnolia;
+  }
+
+  &-plan {
+    @apply flex justify-between items-center;
+    & h3,
+    & h4 {
+      @apply text-primary-Marine-blue font-medium text-[14px];
+    }
+    & button {
+      @apply text-neutral-Cool-gray text-[12px] underline;
+    }
+  }
+
+  &-addon {
+    @apply flex flex-col gap-[20px] mt-[20px] pt-[20px] border-t;
+
+    & > div {
+      @apply flex justify-between items-center;
+
+      & p {
+        &:first-child {
+          @apply text-neutral-Cool-gray text-[12px];
+        }
+        &:last-child {
+          @apply text-primary-Marine-blue font-medium opacity-60 text-[14px];
+        }
+      }
+    }
+  }
+
+  &-total {
+    @apply flex items-center px-[20px] justify-between;
+
+    & p {
+      @apply text-neutral-Cool-gray text-[12px];
+    }
+
+    & > h4 {
+      @apply text-primary-Purplish-blue font-medium text-[18px];
+    }
+  }
 }

@@ -34,6 +34,8 @@ type Props = {
 };
 
 const Plan: FC<Props> = ({ duration, setDuration, plan, setPlan }) => {
+  const price = duration === 'Monthly' ? 1 : 10;
+
   return (
     <div className="plan">
       <h2 className="h2">Select your plan</h2>
@@ -56,7 +58,7 @@ const Plan: FC<Props> = ({ duration, setDuration, plan, setPlan }) => {
               <h4>{pl.name}</h4>
 
               <p>
-                ${pl.price}/{duration === 'Monthly' ? 'mo' : 'yr'}
+                ${pl.price * price}/{duration === 'Monthly' ? 'mo' : 'yr'}
               </p>
             </div>
           </div>

@@ -15,7 +15,13 @@ const Home: NextPage = () => {
   const [step, setSteps] = useState(1);
   const [duration, setDuration] = useState('Monthly');
   const [plan, setPlan] = useState<PLAN>();
-  const [addon, setAddon] = useState<Addon>();
+  const [addon, setAddon] = useState<Addon[]>();
+
+  const next = () => {
+    if (step === 2 && !plan) return;
+
+    setSteps(step + 1);
+  };
 
   return (
     <main className="main">
@@ -45,19 +51,19 @@ const Home: NextPage = () => {
                       setAddon={setAddon}
                     />
                   )}
-                  {step === 4 && (
+                  {step === 4 && plan && (
                     <Summary
                       duration={duration}
                       plan={plan}
                       addon={addon}
-                      change={() => setSteps(1)}
+                      change={() => setSteps(2)}
                     />
                   )}
                 </div>
 
                 <Navigation
                   step={step}
-                  next={() => setSteps(step + 1)}
+                  next={next}
                   back={() => setSteps(step - 1)}
                 />
               </div>

@@ -1,2 +1,27 @@
 .add {
+  &-box {
+    @apply flex flex-col gap-[15px] mt-[40px];
+  }
+
+  &-item {
+    @apply flex gap-[20px] items-center flex-1 hover:border-primary-Purplish-blue cursor-pointer py-[20px] px-[20px] rounded-[10px] border;
+
+    & > div {
+      & h4 {
+        @apply font-medium text-[12px] md:text-[14px];
+      }
+
+      & p {
+        @apply text-neutral-Cool-gray text-[10px] md:text-[12px];
+      }
+    }
+
+    & > p {
+      @apply text-primary-Purplish-blue text-[14px];
+    }
+  }
+
+  &-check {
+    @apply flex items-center justify-center h-[20px] w-[20px] rounded-[3px];
+  }
 }
