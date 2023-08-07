@@ -10,6 +10,9 @@ import Appreciation from '@/components/appreciation';
 import Plan, { Plan as PLAN } from '@/components/plan';
 import AddOn, { Addon } from '@/components/add-on';
 import Summary from '@/components/summary';
+import { useForm, useFormState } from 'react-hook-form';
+import { IInfoform, infoSchema } from '@/form/info';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 const Home: NextPage = () => {
   const [step, setSteps] = useState(1);
@@ -17,9 +20,16 @@ const Home: NextPage = () => {
   const [plan, setPlan] = useState<PLAN>();
   const [addon, setAddon] = useState<Addon[]>();
 
-  const next = () => {
-    if (step === 2 && !plan) return;
+  const {
+    register,
+    formState: { errors, isValid },
+  } = useForm<IInfoform>({
+    resolver: zodResolver(infoSchema),
+    mode: 'onBlur',
+  });
 
+  const next = () => {
+    if ((step === 2 && !plan) || (step === 1 && !isValid)) return;
     setSteps(step + 1);
   };
 
@@ -35,7 +45,7 @@ const Home: NextPage = () => {
             {step < 5 ? (
               <div className="flex flex-col md:h-[575px]">
                 <div className="my-[30px] md:mb-auto md:mt-[40px]">
-                  {step === 1 && <Info />}
+                  {step === 1 && <Info errors={errors} register={register} />}
                   {step === 2 && (
                     <Plan
                       duration={duration}

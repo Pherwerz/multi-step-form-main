@@ -9,9 +9,13 @@
     & label {
       @apply text-[12px] font-medium opacity-70;
     }
+
+    & p {
+      @apply text-[12px] font-medium text-primary-Strawberry-red;
+    }
   }
 
   &-input {
-    @apply w-full focus:border-primary-Purplish-blue placeholder:text-neutral-Cool-gray border-neutral-Light-gray rounded-[5px];
+    @apply w-full focus:border-primary-Purplish-blue placeholder:text-neutral-Cool-gray  rounded-[5px];
   }
 }
